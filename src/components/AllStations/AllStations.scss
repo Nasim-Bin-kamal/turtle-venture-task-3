@@ -1,0 +1,51 @@
+@import '../../sass/variables.scss';
+
+.radioCard{
+    margin: 20px;
+    width: 280px;
+    height: 450px;
+    background-color: $bgColor;
+    border-radius: 25px;
+    
+}
+
+.stationHeader{
+    background-color: rgb(252, 153, 77);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 25px 25px 0 0;
+
+    .backBtn,.switchBtn{
+        background-color: inherit;
+        border: none;
+        cursor: pointer;
+        
+    }
+    .backBtn img{
+        width: 15px;
+    }
+    
+    .switchBtn img{
+        width: 20px;
+    }
+    
+    
+}
+
+.title{
+    color:$titleColor;
+}
+.stations{
+    padding: 0 20px 0 20px;
+}
+.singleStation{
+    font-size: 18px;
+    // line-height: 15px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gray;
+}
