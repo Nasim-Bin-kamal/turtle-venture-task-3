@@ -1,10 +1,11 @@
 import './App.scss';
-import AllStations from './components/AllStations/AllStations';
+import Radio from './pages/Radio/Radio';
+
 
 function App() {
   return (
     <div className="">
-      <AllStations />
+      <Radio />
     </div>
   );
 }

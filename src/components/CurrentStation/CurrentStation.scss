@@ -6,14 +6,13 @@
     height: 450px;
     background-color: $bgColor;
     border-radius: 25px;
+    
 }
 
 .stationHeader{
+    @include radioDisplay;
     background-color: rgb(252, 153, 77);
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding: 5px 10px;
     border-radius: 25px 25px 0 0;
 
     .backBtn,.switchBtn{
@@ -40,11 +39,30 @@
     padding: 0 20px 0 20px;
 }
 .singleStation{
+    @include radioDisplay;
     font-size: 18px;
     // line-height: 15px;
     color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     border-bottom: 1px solid gray;
+}
+
+.runningStation{
+    margin: 10px 0px;
+    @include radioDisplay;
+    
+    .stationLogo{
+        width: 100px;
+        height: 100px;
+        border: 2px solid gray;
+        border-radius: 50%;
+    }
+
+    img{
+        width: 25px;
+    }
+    button{
+        background-color: inherit;
+        border: none;
+        cursor: pointer;
+    }
 }
