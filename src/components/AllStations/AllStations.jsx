@@ -3,34 +3,14 @@ import './AllStations.scss';
 import BtnBackArrow from '../../assets/images/back-arrow.png';
 import BtnSwitch from '../../assets/images/switch.png';
 
-const channels = [
-    {
-        name: "Putin FM",
-        frequency: "66,6"
-    },
-    {
-        name: "Dribbble FM",
-        frequency: "101,2"
-    },
-    {
-        name: "Doge FM",
-        frequency: "99,4"
-    },
-    {
-        name: "Ballads FM",
-        frequency: "87,1"
-    },
-    {
-        name: "Maximum FM",
-        frequency: "142,2"
-    },
-];
 
-const AllStations = () => {
+
+const AllStations = ({ stations, handlePlay }) => {
+
     return (
         <div>
             <div className='radioCard'>
-                <div className="stationHeader">
+                <div className="radioHeader">
 
                     <button className='backBtn'>
                         <img src={BtnBackArrow} alt="back-arrow" />
@@ -41,12 +21,12 @@ const AllStations = () => {
                         <img src={BtnSwitch} alt="switch" />
                     </button>
                 </div>
-                <div className="stations">
+                <div className="radioBody">
                     {
-                        channels?.map((channel, c_id) => (
-                            <div className="singleStation" key={c_id}>
-                                <p>{channel?.name}</p>
-                                <p>{channel?.frequency}</p>
+                        stations?.map((station) => (
+                            <div onClick={() => handlePlay(station?.id)} className="singleStation" key={station?.id}>
+                                <p>{station?.name}</p>
+                                <p>{station?.frequency}</p>
                             </div>
                         ))
                     }

@@ -2,18 +2,17 @@
 
 .radioCard{
     margin: 20px;
-    width: 280px;
-    height: 450px;
+    width: 300px;
+    height: 500px;
     background-color: $bgColor;
     border-radius: 25px;
 }
 
-.stationHeader{
-    background-color: rgb(252, 153, 77);
+.radioHeader{
+    @include radioDisplay;
+    
+    background-color: $headerColor;
     padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     border-radius: 25px 25px 0 0;
 
     .backBtn,.switchBtn{
@@ -36,15 +35,18 @@
 .title{
     color:$titleColor;
 }
-.stations{
+.radioBody{
     padding: 0 20px 0 20px;
+    height: 70%;
 }
 .singleStation{
-    font-size: 18px;
-    // line-height: 15px;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid gray;
+    @include radioDisplay;
+    color: $stationColor;
+    border-bottom: 1px solid #434343;
+    cursor: pointer;
+
+    p{
+        font-size: 20px;
+        font-weight: 500;
+    }
 }

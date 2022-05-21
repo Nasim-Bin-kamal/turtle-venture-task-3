@@ -4,12 +4,13 @@ import BtnBackArrow from '../../assets/images/back-arrow.png';
 import BtnSwitch from '../../assets/images/switch.png';
 import BtnPlus from '../../assets/images/plus.png';
 import BtnMinus from '../../assets/images/minus.png';
+import stationLogo from '../../assets/images/stationLogo.png';
 
-const CurrentStation = () => {
+const CurrentStation = ({ stations, runningStation }) => {
     return (
         <div>
             <div className='radioCard'>
-                <div className="stationHeader">
+                <div className="radioHeader">
                     <button className='backBtn'>
                         <img src={BtnBackArrow} alt="back-arrow" />
                     </button>
@@ -19,8 +20,8 @@ const CurrentStation = () => {
                         <img src={BtnSwitch} alt="switch" />
                     </button>
                 </div>
-                <div className="stations">
-                    <div className="singleStation">
+                <div className="radioBody">
+                    {/* <div className="singleStation">
                         <p>Putin FM</p>
                         <p>66,6</p>
                     </div>
@@ -28,8 +29,8 @@ const CurrentStation = () => {
                         <button>
                             <img src={BtnPlus} alt="" />
                         </button>
-                        <div className='stationLogo'>
-
+                        <div>
+                            <img className='stationLogo' src={stationLogo} alt="" />
                         </div>
                         <button>
                             <img src={BtnMinus} alt="" />
@@ -43,10 +44,39 @@ const CurrentStation = () => {
                     <div className="singleStation">
                         <p>Doge FM</p>
                         <p>99,4</p>
-                    </div>
+                    </div> */}
+                    {
+                        stations?.map((station) => (
+                            <div>
+                                {
+                                    station == runningStation && (
+                                        <div className='runningStation'>
+                                            <button>
+                                                <img src={BtnPlus} alt="" />
+                                            </button>
+                                            <div>
+                                                <img className='stationLogo' src={stationLogo} alt="" />
+                                            </div>
+                                            <button>
+                                                <img src={BtnMinus} alt="" />
+                                            </button>
+
+                                        </div>
+                                    )
+                                }
+
+                                <div className="singleStation" key={station?.id}>
+                                    <p>{station?.name}</p>
+                                    <p>{station?.frequency}</p>
+                                </div>
+                            </div>
+                        ))
+                    }
 
                 </div>
-                <div>
+                <div className='radioFooter'>
+                    <p className='footerTitle'>CURRENTLY PLAYING</p>
+                    <p className='currentPlaying'>{runningStation?.name}</p>
 
                 </div>
             </div>
