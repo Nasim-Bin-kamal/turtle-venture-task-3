@@ -32,6 +32,9 @@ const AllStations = ({ stations, handlePlay }) => {
                     }
 
                 </div>
+                <div className="radioFooter">
+
+                </div>
             </div>
         </div >
     );

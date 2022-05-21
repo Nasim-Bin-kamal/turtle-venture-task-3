@@ -20,7 +20,7 @@ const CurrentStation = ({ stations, runningStation }) => {
                         <img src={BtnSwitch} alt="switch" />
                     </button>
                 </div>
-                <div className="radioBody">
+                <div className="radioBody2">
                     {/* <div className="singleStation">
                         <p>Putin FM</p>
                         <p>66,6</p>
@@ -47,9 +47,9 @@ const CurrentStation = ({ stations, runningStation }) => {
                     </div> */}
                     {
                         stations?.map((station) => (
-                            <div>
+                            <div key={station?.id}>
                                 {
-                                    station == runningStation && (
+                                    station === runningStation && (
                                         <div className='runningStation'>
                                             <button>
                                                 <img src={BtnPlus} alt="" />
@@ -65,7 +65,7 @@ const CurrentStation = ({ stations, runningStation }) => {
                                     )
                                 }
 
-                                <div className="singleStation" key={station?.id}>
+                                <div className="singleStation2" >
                                     <p>{station?.name}</p>
                                     <p>{station?.frequency}</p>
                                 </div>
