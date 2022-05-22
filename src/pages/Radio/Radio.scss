@@ -1,8 +1,17 @@
+.section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background-color: #20202b;
+}
 .radio{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #20202b;
-    height: 100vh;
-    width: 100%;
+   
+  
+    
 }

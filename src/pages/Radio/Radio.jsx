@@ -1,50 +1,45 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Radio.scss';
 import AllStations from '../../components/AllStations/AllStations';
 import CurrentStation from '../../components/CurrentStation/CurrentStation';
+import SignIn from '../../components/SignIn/SignIn';
 
-const stations = [
-    {
-        id: 0,
-        name: "Putin FM",
-        frequency: "66,6"
-    },
-    {
-        id: 1,
-        name: "Dribbble FM",
-        frequency: "101,2"
-    },
-    {
-        name: "Doge FM",
-        frequency: "99,4"
-    },
-    {
-        id: 2,
-        name: "Ballads FM",
-        frequency: "87,1"
-    },
-    {
-        id: 3,
-        name: "Maximum FM",
-        frequency: "142,2"
-    },
-];
 
 const Radio = () => {
     const [runningStation, setRunningStation] = useState([]);
+    const [stations, setSations] = useState([]);
+    useEffect(() => {
+        fetch('https://sheltered-castle-17740.herokuapp.com/stations')
+            .then(res => res.json())
+            .then(data => setSations(data))
+    }, [])
+
+
     const handlePlay = (id) => {
-        const foundStation = stations.find(channel => channel.id === id);
+        const foundStation = stations.find(station => station.id === id);
         setRunningStation(foundStation);
     }
     return (
-        <div className='radio'>
+
+
+        <div className='section'>
             <div>
-                <AllStations stations={stations} handlePlay={handlePlay} />
+                <SignIn />
             </div>
-            <div>
-                <CurrentStation stations={stations} runningStation={runningStation} />
+
+
+            <div className='radio'>
+                <div>
+                    <AllStations stations={stations} handlePlay={handlePlay} />
+                </div>
+                <div>
+                    <CurrentStation stations={stations} runningStation={runningStation} />
+                </div>
             </div>
+
         </div>
+
+
     );
 };
 

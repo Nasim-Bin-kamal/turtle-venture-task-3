@@ -1,0 +1,17 @@
+@import '../../sass/variables.scss';
+
+
+.btnSignIn{
+    font-size: large;
+    color: $titleColor;
+    background-color: $headerColor;
+    border: none;
+    cursor: pointer;
+    width: 95%;
+    align-self: center;
+    padding: 8px;
+    margin:15px 10px;
+    border-radius: 5px;
+
+    
+}

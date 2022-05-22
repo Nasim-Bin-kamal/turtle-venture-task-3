@@ -21,30 +21,7 @@ const CurrentStation = ({ stations, runningStation }) => {
                     </button>
                 </div>
                 <div className="radioBody2">
-                    {/* <div className="singleStation">
-                        <p>Putin FM</p>
-                        <p>66,6</p>
-                    </div>
-                    <div className='runningStation'>
-                        <button>
-                            <img src={BtnPlus} alt="" />
-                        </button>
-                        <div>
-                            <img className='stationLogo' src={stationLogo} alt="" />
-                        </div>
-                        <button>
-                            <img src={BtnMinus} alt="" />
-                        </button>
 
-                    </div>
-                    <div className="singleStation">
-                        <p>Dribbble FM</p>
-                        <p>101,2</p>
-                    </div>
-                    <div className="singleStation">
-                        <p>Doge FM</p>
-                        <p>99,4</p>
-                    </div> */}
                     {
                         stations?.map((station) => (
                             <div key={station?.id}>
@@ -66,7 +43,7 @@ const CurrentStation = ({ stations, runningStation }) => {
                                 }
 
                                 <div className="singleStation2" >
-                                    <p>{station?.name}</p>
+                                    <p>{station?.stationName}</p>
                                     <p>{station?.frequency}</p>
                                 </div>
                             </div>
@@ -76,7 +53,7 @@ const CurrentStation = ({ stations, runningStation }) => {
                 </div>
                 <div className='radioFooter'>
                     <p className='footerTitle'>CURRENTLY PLAYING</p>
-                    <p className='currentPlaying'>{runningStation?.name}</p>
+                    <p className='currentPlaying'>{runningStation?.stationName}</p>
 
                 </div>
             </div>

@@ -25,7 +25,7 @@ const AllStations = ({ stations, handlePlay }) => {
                     {
                         stations?.map((station) => (
                             <div onClick={() => handlePlay(station?.id)} className="singleStation" key={station?.id}>
-                                <p>{station?.name}</p>
+                                <p>{station?.stationName}</p>
                                 <p>{station?.frequency}</p>
                             </div>
                         ))
