@@ -1,6 +1,8 @@
 @import '../../sass/variables.scss';
 
-
+.signInCard{
+    display: flex;
+}
 .btnSignIn{
     font-size: large;
     color: $titleColor;

@@ -23,10 +23,6 @@ const Radio = () => {
 
 
         <div className='section'>
-            <div>
-                <SignIn />
-            </div>
-
 
             <div className='radio'>
                 <div>
